@@ -14,8 +14,10 @@
 		</mt-header>
 		<!-- 所在城市 -->
 		<div class="actualCity">
-			<div class="cityDiv">当前定位城市：<small>定位不准时，请在城市列表中选择</small></div>		
-			<div class="cityDiv" style="color:#26A2FF;" @click='selectedCity'>{{myCity}}<small>&gt;</small></div>
+			<!-- <div class="cityDiv">当前定位城市：<small>定位不准时，请在城市列表中选择</small></div> -->
+			<mt-cell title="当前定位城市：" value="定位不准时，请在城市列表中选择"></mt-cell>	
+			<mt-cell :title="myCity" is-link  @click.native='selectedCity'></mt-cell>	
+			<!-- <div class="cityDiv" style="color:#26A2FF;" @click='selectedCity'>{{myCity}}<small>&gt;</small></div> -->
 		</div>
 		<!-- 热门城市 -->
 		<div class="hotCitys" >			
@@ -201,34 +203,46 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 #city{
 	background-color: #F5F5F5;
 	font-size: 0.45333rem;
 }
-.mint-header{
+#city .mint-header{
 	font-size: 0.48rem;
 	padding: 0.72rem 0.4rem;
 }
-.cityDiv{
+#city .cityDiv{
 	padding: 0.4rem ;
 	overflow: hidden;
 	border-top: 1px solid #E6E6E6;
 	border-bottom: 1px solid #E6E6E6;
 	/*overflow: hidden;*/
 }
-.cityDiv>small{
+#city #city .cityDiv>small{
     color: #9F9F9F;
     float: right;
     font-size: 0.32rem;
     padding-top: 0.13333rem;
 }
-ul{
+#city .mint-cell-title{
+	padding: 0.4rem ;
+	font-size: 0.45333rem;
+}
+#city .mint-cell-value{
+	font-size: 0.32rem;
+}
+#city .mint-cell-allow-right::after{
+	width: 0.18666rem;
+    height: 0.18666rem;
+    right: 0.66666rem;
+}
+#city ul{
 	list-style: none;
 	padding: 0;
 	overflow: hidden;
 }
-li{
+#city li{
 	margin: 0;
 	padding: 0;
 	width: 24.65%;
@@ -242,22 +256,22 @@ li{
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-.login{
+#city .login{
 	margin-right: 0.074962rem;
 }
-.actualCity{
+#city .actualCity{
     background-color: #FFF;
     /*border-bottom:1px solid #F5F5F5;*/
 }
-.hotCitys{
+#city .hotCitys{
 	background-color: #FFF;
     border-color: #F5F5F5;
     font-size: 0.45333rem;
 }
-.hotCitys li{
+#city .hotCitys li{
 	color:#26A2FF;
 }
-.groupCity ul{
+#city .groupCity ul{
     background-color: #FFF;
     font-size: 0.45333rem;
 }
