@@ -1,4 +1,4 @@
-<template>
+﻿<template>
 	<div id="bottomMenu" @click.prevent="changePage">
 		<mt-tabbar fixed v-model="selected">
 		  <mt-tab-item  id="/index/home">
@@ -30,7 +30,8 @@ export default{
 	name: 'bottomMenu',
 	data(){
 		return {
-			selected: this.$route.path
+			selected: this.$route.path,
+			test: "123"
 		}
 	},
 	methods:{
